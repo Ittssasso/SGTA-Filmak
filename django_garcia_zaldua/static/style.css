@@ -1,0 +1,57 @@
+.menu {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: gray;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.menu a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+.menu a:hover {
+    color: #f1f1f1;
+}
+
+#main {
+    margin-left: 200px;
+}
+
+.h1 {
+    color: green;
+    font-size: 30px;
+}
+
+p {
+    padding: 0px 14px 4px;
+    color: white;
+    font-size: 30px;
+}
+
+#has {
+    margin-top:58px;
+    margin-left: 230px;
+    font-size: 20px;    
+}
+
+.mezu {
+    margin-top: 58px;
+    margin-left: 18px;
+    font-size: 20px;
+    color:black;
+}
+
+.erab{
+    font-size:18px;
+    color:black;
+}
+
+

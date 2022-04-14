@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="menu">
+    <p>Menua</p>
+    <a href="/filmak/filmakikusi">Filmak ikusi</a>
+    <a href="/filmak/filmakbozkatu">Bozkatu</a>
+    <a href="/filmak/filmakzaleak">Zaleak</a>
+    <a href="/filmak/logout">Saioa itxi</a>
+</div>
+ <div id="main">
+    <h1>Filmen gunea</h1>
+    {% if mezua %}
+    <p class="mezu">{{mezua}}</p>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="menu">
+    <p>Menua</p>
+    <a href="/filmak/filmakikusi">Filmak ikusi</a>
+    <a href="/filmak/filmakbozkatu">Bozkatu</a>
+    <a href="/filmak/filmakzaleak">Zaleak</a>
+    <a href="/filmak/logout">Saioa itxi</a>
+</div>
+<div id="main">
+    <h1 style="color: green">Menua</h1>
+    <table border="1">
+        <tr><th>Izenburua</th><th>Zuzendaria</th><th>Urtea</th><th>Generoa</th><th>Sinopsia</th><th>Bozkak</th></tr>
+         {% for filma in filmak %}
+            <tr><td>{{filma.izenburua}}</td><td>{{filma.zuzendaria}}</td><td>{{filma.urtea}}</td><td>{{filma.generoa}}</td><td>{{filma.sinopsia}}</td><td>{{filma.bozkak}}</td></tr>
+         {% endfor %}
+    </table>
+
+    <div class="pagination">
+         <span class="step-links">
+         {% if filmak.has_previous %}
+         <a href="?page={{ filmak.previous_page_number }}">Aurrekoa</a>
+         {% endif %}
+         <span class="current">
+         Orria: {{ filmak.number }} / {{ filmak.paginator.num_pages }}.
+         </span>
+         {% if filmak.has_next %}
+         <a href="?page={{ filmak.next_page_number }}">Hurrengoa</a>
+         {% endif %}
+         </span>
+    </div>
+</div>
+</body>
+</html>

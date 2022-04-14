@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Filmak bozkatu</title>
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <p>Menua</p>
+        <a href="/filmak/filmakikusi">Filmak ikusi</a>
+        <a href="/filmak/filmakbozkatu">Bozkatu</a>
+        <a href="/filmak/filmakzaleak">Zaleak</a>
+        <a href="/filmak/logout">Saioa itxi</a>
+    </div>
+    <div id="main">
+    <h1 style="color: green">Bozkatu zure gogoko pelikula</h1>
+    <form action="{% url 'filmak:filmakbozkatu' %}" method="post">
+        {% csrf_token %}
+        <select id="filma" name="filma">
+            {% for filma in filmak %}
+            <option value="{{filma.izenburua}}">{{filma.izenburua}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Bozkatu" name="bozkatu">
+    </form>
+    {% if bozketa_ondo %}
+    <p class="mezu">{{bozketa_ondo}}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

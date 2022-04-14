@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <p>Menua</p>
+        <a href="/filmak/filmakikusi">Filmak ikusi</a>
+        <a href="/filmak/filmakbozkatu">Bozkatu</a>
+        <a href="/filmak/filmakzaleak">Zaleak</a>
+        <a href="/filmak/logout">Saioa itxi</a>
+    </div>
+    <div id="main">
+        <h1 style="color: green">Zaleak</h1>
+        <form action="{% url 'filmak:zaleak' %}" method="post">
+            {% csrf_token %}
+            <select id="filma" name="filma">
+                {% for filma in filmak %}
+                <option value="{{filma.izenburua}}">{{filma.izenburua}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Erakutsi zaleak" name="zaleakikusi">
+        </form>
+    {% if aukera_filma %}
+        <p class="mezu"><strong>{{aukera_filma.izenburua}}-ren zaleak</strong></p>
+        {% if not bozkatzaileak %}
+            <p class="mezu">Inork ez du filma hau bozkatu</p>
+        {% else %}
+            <table border="1">
+           <tr><th>Bozkatzaileak</th></tr>
+           {% for b in bozkatzaileak %}
+               <tr><td>{{b}}</td></tr>
+           {% endfor %}
+            </table>
+        {% endif %}
+   {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Erregistratu</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <p>Filmen gunea</p>
+        <a href="/filmak/signup">Erregistratu</a>
+        <a href="/filmak/login">Saioa hasi</a>
+    </div>
+    <div id="main">
+        <form action="{% url 'filmak:signup' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>Erregistratu</h1></legend>
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                <p class="erab">Erabiltzaile izena:</p><input type="text" id="izena" name="izena" value="{%if erab_izena%}{{erab_izena}}{%endif%}" /> <br />
+                <p class="erab">Pasahitza:</p><input type="password" id="pas" name="pas" /><br />
+                <p class="erab">Pasahitza errepikatu:</p><input type="password" id="pas2" name="pas2" /><br />
+            </fieldset>
+            <input type="submit" value="Erregistratu">
+        </form>
+    </div>
+</body>
+</html>

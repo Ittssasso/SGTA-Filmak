@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Saioa hasi</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <p>Filmen gunea</p>
+        <a href="/filmak/signup">Erregistratu</a>
+        <a href="/filmak/login">Saioa hasi</a>
+    </div>
+    <div id="main">
+        <form action="{% url 'filmak:login' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>SAIOA HASI</h1></legend>
+                <p class="erab">Izena:</p><input type="text" name="izena" id="izena"></br>
+                <p class="erab">Pasahitza:</p><input type="password" name="pasahitza" id="pasahitza">
+            </fieldset>
+            <input type="submit" value="Saioa hasi" name="log">
+            {% if error_message %}<p class="erab"><strong>{{ error_message }}</strong></p>{% endif %}
+        </form>
+    </div>
+</body>
+</html>
