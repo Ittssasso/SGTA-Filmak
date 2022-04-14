@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'Filmak'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_17D89078787C44659CE65083EBE3E81C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD575DC312244EBDA34161FFF5BE0E37 }}
           package: .
