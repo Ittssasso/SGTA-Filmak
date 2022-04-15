@@ -25,7 +25,7 @@ SECRET_KEY = '052f9570-3267-44d4-b03d-304925107465'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['filmak.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application references
