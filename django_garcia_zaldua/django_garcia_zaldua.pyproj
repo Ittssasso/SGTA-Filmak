@@ -55,6 +55,7 @@
     <Content Include="filmak\templates\filmak\login.html" />
     <Content Include="filmak\templates\filmak\signup.html" />
     <Content Include="filmak\templates\filmak\filmakikusi.html" />
+    <Content Include="web.config" />
     <None Include="Properties\PublishProfiles\Filmak - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Filmak - Web Deploy.pubxml" />
     <Content Include="requirements.txt" />
