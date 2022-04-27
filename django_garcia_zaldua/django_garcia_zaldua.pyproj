@@ -57,6 +57,7 @@
     <Content Include="filmak\templates\filmak\filmakikusi.html" />
     <None Include="Properties\PublishProfiles\Filmak - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Filmak - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Filmak - Web Deploy1.pubxml" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -18,12 +18,12 @@
             {% csrf_token %}
             <fieldset>
                 <legend><h1>Erregistratu</h1></legend>
-                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
                 <p class="erab">Erabiltzaile izena:</p><input type="text" id="izena" name="izena" value="{%if erab_izena%}{{erab_izena}}{%endif%}" /> <br />
                 <p class="erab">Pasahitza:</p><input type="password" id="pas" name="pas" /><br />
                 <p class="erab">Pasahitza errepikatu:</p><input type="password" id="pas2" name="pas2" /><br />
             </fieldset>
             <input type="submit" value="Erregistratu">
+            {% if error_message %}<p class="erab"><strong>{{ error_message }}</strong></p>{% endif %}
         </form>
     </div>
 </body>
